@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<provisiond-configuration 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://xmlns.opennms.org/xsd/config/provisiond-configuration"
+   
+  foreign-source-dir="/usr/share/opennms/etc/foreign-sources" 
+  requistion-dir="/usr/share/opennms/etc/imports"
+   
+  importThreads="8" scanThreads="10" rescanThreads="10" writeThreads="8" >
+
+<requisition-def
+  import-name="{{ requisition_name }}"
+  import-url-resource="{{ requisition_url }}" >
+  <cron-schedule>0 * * * * ? *</cron-schedule>
+</requisition-def>
+  
+</provisiond-configuration>
